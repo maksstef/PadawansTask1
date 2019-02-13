@@ -9,8 +9,12 @@ namespace PadawansTask1
             int year = 1;
             while (initialPopulation <= currentPopulation)
             {
-                initialPopulation = (int)((visitors + initialPopulation) * (1+percent/100));
+                initialPopulation = (int)((visitors + initialPopulation) * (1 + percent / 100));
                 year++;
+                if(initialPopulation == currentPopulation)
+                {
+                    year -= 1;
+                }
             }
             return year;
         }
